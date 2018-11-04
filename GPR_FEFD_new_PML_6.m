@@ -11,7 +11,7 @@
 %      Sx = 1 - 1i*sig_x/k;
 %      sig_x = 1/(d-x);
 %
-% -----------2018.10£¨Deshan Feng, Siyuan Ding, and Xun Wang£©----------- %
+% -----------2018.10Â£Â¨Deshan Feng, Siyuan Ding, and Xun WangÂ£Â©----------- %
 close all;
 clc;
 clear;
@@ -195,14 +195,14 @@ plot(tt/1e-9,data1);
 title('ifft(fft(Ricker))');  xlabel('Time(ns)');  ylabel('Amplitude');
 %% Parameters for mesh refining
 theta = 0.4; MaxIt = 2; RT = 3;
-u_rec=zeros(nf,nsorc);% Record£¬which value in the first frequency is 0
+u_rec=zeros(nf,nsorc);% RecordÂ£Â¬which value in the first frequency is 0
 [xq,yq]=meshgrid(-0.03:0.003:1.03,-0.13:0.003:0.53);% Interpolation grid spacing
-u_rec_f = zeros(size(xq,1)*size(xq,2),nf);          % Record of one shot point£¬with interpolation mesh£¬the number of the sampling frequency is nf
+u_rec_f = zeros(size(xq,1)*size(xq,2),nf);          % Record of one shot pointÂ£Â¬with interpolation meshÂ£Â¬the number of the sampling frequency is nf
 for i=2:151          % main frequency, the loop starts from the second frequency
     i                % the sort number of the frequency
     omega = 2 * pi *f(i);
-    for j=1:nsorc                       %ith shot point
-%     for j=99                       %ith shot point
+%     for j=1:nsorc                       %ith shot point
+    for j=99                       %ith shot point
         %% Mesh Refinement
         mesh=mesh0;
         for iter = 1:MaxIt
